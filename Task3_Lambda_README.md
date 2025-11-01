@@ -296,6 +296,66 @@ def lambda_handler(event, context):
 Після спрацювання розкладу EC2 інстанси з тегом `AutoStop=true` будуть автоматично зупинені
 ![Результат роботи](Screens_Lambda/3.8.1_result_ec2_stopped.png)
 
+### Крок 9: Видалення ресурсів
+
+#### Як видалити створені ресурси:
+Важливо видалити всі створені ресурси в правильному порядку, щоб уникнути помилок та додаткових витрат.
+
+#### Детальні кроки видалення:
+
+**9.1 Видалення EventBridge Schedule**
+1. Перейдіть до **Amazon EventBridge Console**
+2. В лівому меню виберіть **"Scheduler"** → **"Schedules"**
+3. Знайдіть ваш розклад в списку
+4. Виберіть розклад та натисніть **"Delete"**
+5. Підтвердіть видалення в модальному вікні
+
+**Важливо**: Спочатку видаліть розклад, щоб запобігти подальшим викликам Lambda функції
+![Видалення Scheduler](Screens_Lambda/3.9.1_delete_scheduler.png)
+
+**9.2 Видалення IAM ролі**
+1. Перейдіть до **IAM Console**
+2. В лівому меню виберіть **"Roles"**
+3. Знайдіть створену раніше роль `lambda-stop-ec2-by-tag-role`
+4. Спочатку видаліть inline policy:
+   - Відкрийте роль → вкладка **"Permissions"**
+   - Знайдіть inline policy → **"Delete"**
+5. Після видалення policy, видаліть саму роль:
+   - Виберіть роль → **"Delete"**
+   - Введіть ім'я ролі для підтвердження
+
+**Важливо**: Спочатку видаліть inline policy, а потім саму роль
+![Видалення IAM ролі](Screens_Lambda/3.9.2_delete_iam_roles.png)
+
+**9.3 Видалення Lambda функції**
+1. Перейдіть до **Lambda Console**
+2. В списку функцій знайдіть `stop-ec2-by-tag`
+3. Виберіть функцію → **"Actions"** → **"Delete"**
+4. Введіть **"delete"** для підтвердження
+5. Натисніть **"Delete"**
+
+Також автоматично видаляться пов'язані CloudWatch Log Groups
+![Видалення Lambda функції](Screens_Lambda/3.9.3_delete_lambda_function.png)
+
+**9.4 Видалення EC2 інстансу**
+1. Перейдіть до **EC2 Console**
+2. В лівому меню виберіть **"Instances"**
+3. Знайдіть тестовий інстанс `lambda-test-ec2`
+4. Виберіть інстанс → **"Instance state"** → **"Terminate instance"**
+5. Підтвердіть видалення в модальному вікні
+
+**Примітка**: Якщо інстанс зупинений Lambda функцією, спочатку запустіть його, а потім terminate
+![Видалення EC2](Screens_Lambda/3.9.4_delete_ec2.png)
+
+**9.5 Видалення Security Group**
+1. В **EC2 Console** перейдіть до **"Security Groups"**
+2. Знайдіть створену раніше security group `lambda-test-sg`
+3. Виберіть security group → **"Actions"** → **"Delete security group"**
+4. Підтвердіть видалення натиснувши **"Delete"**
+
+**Важливо**: Security group можна видалити тільки після видалення всіх EC2 інстансів, які її використовують
+![Видалення Security Group](Screens_Lambda/3.9.5_delete_ec2_security_group.png)
+
 ## Код Lambda функції
 
 ```python
@@ -353,12 +413,17 @@ def lambda_handler(event, context):
 
 ## Видалення ресурсів
 
+### Детальні інструкції:
+Дивіться **Крок 9** вище для покрокових інструкцій з скрінами.
+
 ### Порядок видалення:
 1. **EventBridge Schedule**: EventBridge → Scheduler → Schedules → виберіть розклад → Delete
-2. **Lambda Function**: Lambda → Functions → виберіть функцію → Actions → Delete
-3. **IAM Role**: IAM → Roles → виберіть роль → Delete (спочатку видаліть inline policy)
+2. **IAM Role**: IAM → Roles → спочатку видаліть inline policy, потім роль → Delete
+3. **Lambda Function**: Lambda → Functions → виберіть функцію → Actions → Delete
 4. **EC2 Instance**: EC2 → Instances → виберіть інстанс → Instance state → Terminate
 5. **Security Group**: EC2 → Security Groups → виберіть групу → Actions → Delete
+
+**Важливо**: Дотримуйтеся саме цього порядку для уникнення помилок залежностей!
 
 ## Результат виконання завдання
 
