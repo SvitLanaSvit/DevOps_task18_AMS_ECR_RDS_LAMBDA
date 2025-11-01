@@ -1,0 +1,139 @@
+AWS Вправа
+Завдання 1: ECR 
+Створіть власний репозиторій ECR
+
+Зберіть власний образ на своєму комп’ютері
+
+Авторизуйтесь у свій репозиторій ECR
+
+Push створений образ у репозиторій ECR.
+
+
+
+
+
+Завдання 2: RDS 
+Створіть базу даних MySQL у сервісі AWS 
+
+Підключіться до бази даних з комп’ютера за допомогою утиліту mysql
+
+Видаліть базу даних
+
+
+
+
+
+Завдання 3: Lambda
+Напишіть функцію AWS Lambda, яка буде запускатися за розкладом (cron) о 12:00 дня і зупинятиме всі EC2-екземпляри, що працюють із певним тегом.
+
+Використайте мову Python та бібліотеку boto3 для реалізації функції.
+
+Після перевірки роботи видаліть Lambda-функцію та видаліть пов’язану IAM-роль, створену для неї.
+
+
+
+
+
+Для читання
+What is Amazon ECR? — що таке Amazon Elastic Container Registry
+Amazon RDS User Guide — посібник користувача Amazon RDS
+AWS Lambda Developer Guide — посібник розробника AWS Lambda
+Boto3 Documentation — офіційна документація Python-бібліотеки Boto3
+
+
+
+
+ENG:
+
+
+
+
+
+AWS Exercise
+Task 1: ECR
+Create your own ECR repository
+
+Build your custom image on your laptop
+
+Login to the ECR repository
+
+Push the image to ECR
+
+
+
+
+
+Task 2: RDS
+Create an AWS MySQL database
+
+Connect to the database with mysql utility from your PC
+
+Delete the database
+
+
+
+
+
+Task 3: Lambda
+Write an AWS Lambda function that will run by cron at 12:00 PM and stop all EC2 instances running with a specific tag
+
+Use Python and boto3 library for it
+
+After verifying that the Lambda function works, remove it and its IAM role
+
+
+
+
+
+To Read
+What is Amazon ECR?
+Amazon RDS User Guide
+AWS Lambda Developer Guide
+Boto3 Documentation
+
+
+
+
+Формат здачі ДЗ:
+
+Завдання 1
+
+1. Скрін з створеним ECR
+
+2. Код з Dockerfile, в якому буде, наприклад, встановлення вебсервера Apache, 
+
+додавання одного рядка тексту в index.html (як приклад), запуском httpd
+
+3. Скрін з описом, як використовувати ECR (Push commands)
+
+4. Скрін з логіном с командного рядка в ECR
+
+5. Скрін з білдом імеджа з Dockerfile 
+
+6. Скрін з пушем імеджа в створений ECR
+
+7. Cкрін з видаленням ERC
+
+Завдання 2
+
+1. Скрін з створеним AWS MySQL database
+
+2. Скрін з кідключенням, з власного ПК, до створеного AWS MySQL
+
+3. Скрін з видаленням AWS MySQL database
+
+Завдання 3
+
+1. Скрін з EventBridge з відповідними тригерами
+
+2. Скрін з створеною IAM ролью
+
+3. Скрін з змістом IAM ролі
+
+4. Скрін з створеною(ми) EC2 з відповідним тегом (по якому фільтр Lambda відпрацьовує)
+
+5. Код з Lambda Function на Python, використовуючи бібліотеку boto3
+
+6. Скрін, як відпрацьовує (чекати 12:00 не обов'язково для цього ;) просто поставити інший час)
+
+7. Скрін з видаленням Lambda Function й IAM ролі
