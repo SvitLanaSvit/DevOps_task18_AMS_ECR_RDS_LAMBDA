@@ -329,6 +329,22 @@ docker system prune -a
 ```
 ![Видалення локальних образів](Screens_ecr/1.6.3_delete_image_local.png)
 
+### Видалення AWS Access Keys (з міркувань безпеки):
+1. **IAM Console** → **Security credentials**
+2. В розділі **"Access keys"** знайдіть створений ключ
+3. Натисніть **"Actions"** → **"Delete"**
+4. Підтвердіть видалення введенням **"Delete"**
+5. Натисніть **"Delete"**
+
+**⚠️ Важливо для DanIT курсу**: 
+- Видаляйте тільки ключі, які ви створили для цього завдання
+- Базові credentials курсу залишайте для подальших завдань
+- Тимчасові credentials автоматично експіруються
+
+![Видалення Access Keys](Screens_ecr/1.6.4_delete_access_keys.png.png)
+![Видалення Access Keys](Screens_ecr/1.6.5_delete_access_keys.png.png)
+![Видалення Access Keys](Screens_ecr/1.6.6_delete_access_keys.png.png)
+
 ## Результат виконання завдання
 
 ✅ **Створено репозиторій ECR**  
@@ -338,6 +354,7 @@ docker system prune -a
 ✅ **Видалено образ з ECR репозиторію**  
 ✅ **Видалено ECR репозиторій**  
 ✅ **Видалено локальні Docker образи**  
+✅ **Видалено AWS Access Keys (безпека)**  
 
 ## Важливі моменти
 
