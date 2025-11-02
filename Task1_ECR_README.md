@@ -341,9 +341,9 @@ docker system prune -a
 - Базові credentials курсу залишайте для подальших завдань
 - Тимчасові credentials автоматично експіруються
 
-![Видалення Access Keys](Screens_ecr/1.6.4_delete_access_keys.png.png)
-![Видалення Access Keys](Screens_ecr/1.6.5_delete_access_keys.png.png)
-![Видалення Access Keys](Screens_ecr/1.6.6_delete_access_keys.png.png)
+![Видалення Access Keys](Screens_ecr/1.6.4_delete_access_keys.png)
+![Видалення Access Keys](Screens_ecr/1.6.5_delete_access_keys.png)
+![Видалення Access Keys](Screens_ecr/1.6.6_delete_access_keys.png)
 
 ## Результат виконання завдання
 
