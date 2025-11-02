@@ -1,0 +1,112 @@
+# AWS Credentials and sensitive files
+*.pem
+*.key
+*.p12
+*.pfx
+aws-credentials.txt
+config.json
+credentials.json
+.aws/
+*.env
+.env.*
+
+# AWS CLI temporary files
+.aws-sam/
+samconfig.toml
+
+# Terraform files (if used)
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+*.tfplan
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Node.js (if used for any utilities)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Scripts with sensitive data
+*_credentials.sh
+*_secrets.sh
+*_private.sh
+
+# All shell scripts
+*.sh
+
+# Exclude large binary files that might be added accidentally
+*.iso
+*.dmg
+*.exe
+*.msi
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+
+# Keep structure but ignore content examples
+# !example_config.json.template
