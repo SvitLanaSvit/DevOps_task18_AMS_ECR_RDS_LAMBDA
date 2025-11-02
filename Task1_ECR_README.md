@@ -310,13 +310,13 @@ CMD ["httpd-foreground"]
 1. ECR Console → відкрийте репозиторій
 2. Виберіть образ → Actions → Delete
 3. Підтвердіть видалення
-![Видалення образу з ECR](Screens_ecr/1.6.1_delete_image_from_ecr.png)
+![Видалення образу з ECR](Screens_ecr/1.6.1_delete_image.png)
 
 ### Видалення репозиторію ECR:
 1. ECR Console → Repositories
 2. Виберіть репозиторій → Delete
 3. Введіть `delete` для підтвердження
-![Видалення репозиторію ECR](Screens_ecr/1.6.2_delete_ecr_repository.png)
+![Видалення репозиторію ECR](Screens_ecr/1.6.2_delete_repository.png)
 
 ### Видалення локальних образів:
 ```bash
@@ -327,7 +327,7 @@ docker rmi 626126209976.dkr.ecr.eu-central-1.amazonaws.com/sk-my-web-app:latest
 # Очищення системи Docker
 docker system prune -a
 ```
-![Видалення локальних образів](Screens_ecr/1.6.3_delete_local_images.png)
+![Видалення локальних образів](Screens_ecr/1.6.3_delete_image_local.png)
 
 ## Результат виконання завдання
 
